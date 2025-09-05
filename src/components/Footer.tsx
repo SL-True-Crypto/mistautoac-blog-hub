@@ -21,7 +21,7 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center gap-3 text-primary-foreground/80">
                 <Phone className="w-5 h-5" />
-                <span>+94 77 123 4567</span>
+                <span>071 159 7373</span>
               </div>
               <div className="flex items-center gap-3 text-primary-foreground/80">
                 <Mail className="w-5 h-5" />
@@ -29,7 +29,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3 text-primary-foreground/80">
                 <MapPin className="w-5 h-5" />
-                <span>Colombo, Sri Lanka</span>
+                <span>F31, Kannaththota, Ruwanwella</span>
               </div>
             </div>
           </div>
@@ -108,13 +108,28 @@ const Footer = () => {
             
             {/* Social Links */}
             <div className="flex space-x-4">
-              <Button variant="ghost" size="sm" className="h-10 w-10 p-0 hover:bg-primary-foreground/10">
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="h-10 w-10 p-0 hover:bg-primary-foreground/10"
+                onClick={() => window.open("https://www.facebook.com/Aselasenarath20", "_blank")}
+              >
                 <Facebook className="w-5 h-5" />
               </Button>
-              <Button variant="ghost" size="sm" className="h-10 w-10 p-0 hover:bg-primary-foreground/10">
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="h-10 w-10 p-0 hover:bg-primary-foreground/10"
+                onClick={() => window.open("https://x.com/MistAuto89473", "_blank")}
+              >
                 <Twitter className="w-5 h-5" />
               </Button>
-              <Button variant="ghost" size="sm" className="h-10 w-10 p-0 hover:bg-primary-foreground/10">
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="h-10 w-10 p-0 hover:bg-primary-foreground/10"
+                onClick={() => window.open("https://wa.me/94711597373", "_blank")}
+              >
                 <Instagram className="w-5 h-5" />
               </Button>
             </div>
