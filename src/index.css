@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Shizuru&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rock+3D&family=Shizuru&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
@@ -103,11 +108,30 @@ All colors MUST be HSL.
 }
 
 @layer base {
+  body { 
+    font-family: 'Noto Sans Sinhala', sans-serif; 
+    @apply bg-background text-foreground;
+  }
+  
+  .hero-bg { 
+    background-size: cover; 
+    background-position: center; 
+  }
+  
+  .shizuru-regular {
+    font-family: "Shizuru", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .orbitron-font {
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
   * {
     @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
   }
 }

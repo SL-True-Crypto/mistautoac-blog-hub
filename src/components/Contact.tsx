@@ -1,112 +1,46 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Phone, MapPin, MessageCircle, Youtube, Facebook, Twitter } from "lucide-react";
 
 const Contact = () => {
   const handleWhatsAppClick = () => {
     window.open("https://wa.me/94711597373", "_blank");
   };
 
-  const handleLocationClick = () => {
-    window.open("https://maps.app.goo.gl/814t8NRZodujZfcK6", "_blank");
-  };
-
   return (
-    <section className="py-16 bg-secondary/20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            අප හා සම්බන්ධ වන්න
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            AC සහ Refrigeration සේවා සඳහා අප හා සම්බන්ධ වන්න. 24/7 සේවාවක් ලබා දෙන්නෙමු.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          <Card className="text-center hover:shadow-lg transition-shadow">
-            <CardContent className="pt-6">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-8 h-8 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">අමතන්න</h3>
-              <p className="text-muted-foreground mb-4">ඕනෑම වේලාවක අමතන්න</p>
-              <a href="tel:0711597373" className="text-primary font-medium hover:underline">
-                071 159 7373
-              </a>
-            </CardContent>
-          </Card>
-
-          <Card className="text-center hover:shadow-lg transition-shadow">
-            <CardContent className="pt-6">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin className="w-8 h-8 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">ස්ථානය</h3>
-              <p className="text-muted-foreground mb-4">අපගේ කාර්යාලය</p>
-              <button 
-                onClick={handleLocationClick}
-                className="text-primary font-medium hover:underline"
-              >
-                F31, Kannaththota, Ruwanwella
-              </button>
-            </CardContent>
-          </Card>
-
-          <Card className="text-center hover:shadow-lg transition-shadow">
-            <CardContent className="pt-6">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <MessageCircle className="w-8 h-8 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">WhatsApp</h3>
-              <p className="text-muted-foreground mb-4">ක්ෂණික පණිවිඩයක්</p>
-              <Button onClick={handleWhatsAppClick} className="w-full">
-                WhatsApp එකෙන් පණිවිඩයක්
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="text-center">
-          <h3 className="text-2xl font-semibold mb-6">අප හා සම්බන්ධ වන්න</h3>
-          <div className="flex justify-center space-x-4">
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => window.open("https://wa.me/94711597373", "_blank")}
-              className="flex items-center gap-2"
-            >
-              <MessageCircle className="w-5 h-5" />
-              WhatsApp
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => window.open("https://youtube.com/@mist-auto-ac?si=hr362_VIOgK1d8u5", "_blank")}
-              className="flex items-center gap-2"
-            >
-              <Youtube className="w-5 h-5" />
-              YouTube
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => window.open("https://www.facebook.com/Aselasenarath20", "_blank")}
-              className="flex items-center gap-2"
-            >
-              <Facebook className="w-5 h-5" />
-              Facebook
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => window.open("https://x.com/MistAuto89473", "_blank")}
-              className="flex items-center gap-2"
-            >
-              <Twitter className="w-5 h-5" />
-              Twitter
-            </Button>
-          </div>
+    <section className="py-12 md:py-18 bg-gray-600 text-white" style={{backgroundImage: "url('./contakbrac.png')"}}>
+      <div className="container mx-auto px-6 text-center">
+        <h2 className="text-4xl font-extrabold mb-4">
+          අප සමග සම්බන්ධ වන්න!
+        </h2>
+        <p className="max-w-2xl mx-auto mb-8">
+          ඔබගේ Auto A/C සේවාව සඳහා කලින්ම වේලාවක් වෙන් කරවාගෙන, අනවශ්‍ය රස්තියාදුවකින් තොරව කාර්යක්ෂම සේවාවක් ලබා ගන්න. අපගේ සේවාවන් පිළිබඳ වැඩි විස්තර, පාරිභෝගික අත්දැකීම් සහ නවතම වැඩකටයුතු දැක බලා ගැනීමට පහතින් ඇති අපගේ සමාජ මාධ්‍ය අනුගමනය කරන්න (Follow කරන්න).
+        </p>
+        
+        <Button 
+          onClick={handleWhatsAppClick}
+          className="inline-block bg-white text-blue-800 font-bold text-lg py-3 px-8 rounded-md hover:bg-gray-200 transition-colors mb-8"
+        >
+          Schedule An Appointment
+        </Button>
+        
+        <div className="flex justify-center items-center flex-wrap gap-4">
+          <a href="tel:0711597373" className="flex items-center justify-center w-14 h-14 bg-sky-500 rounded-full hover:bg-sky-600" title="Call 0711597373">
+            <i className="fas fa-phone-alt text-2xl"></i>
+          </a>
+          <a href="https://wa.me/94711597373" target="_blank" className="flex items-center justify-center w-14 h-14 bg-green-500 rounded-full hover:bg-green-600" title="WhatsApp">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-12 h-12" />
+          </a>
+          <a href="https://youtube.com/@mist-auto-ac?si=hr362_VIOgK1d8u5" target="_blank" className="flex items-center justify-center w-14 h-14 bg-red-600 rounded-full hover:bg-red-700" title="YouTube Channel">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube" className="w-10 h-10" />
+          </a>
+          <a href="https://www.facebook.com/Aselasenarath20" target="_blank" className="flex items-center justify-center w-14 h-14 bg-blue-600 rounded-full hover:bg-blue-700" title="Facebook Page">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" className="w-10 h-10" />
+          </a>
+          <a href="https://x.com/MistAuto89473" target="_blank" className="flex items-center justify-center w-14 h-14 bg-gray-800 rounded-full hover:bg-gray-700" title="X (Twitter)">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg" alt="X" className="w-7 h-7" />
+          </a>
+          <a href="https://maps.app.goo.gl/814t8NRZodujZfcK6" target="_blank" className="flex items-center justify-center w-14 h-14 bg-white rounded-full hover:bg-gray-200" title="Google Maps Location">
+            <i className="fas fa-map-marker-alt text-2xl text-red-500"></i>
+          </a>
         </div>
       </div>
     </section>
