@@ -18,7 +18,7 @@ const AdminPanel = () => {
     content: '',
     image: '',
     category: '',
-    readTime: ''
+    read_time: ''
   })
   const { toast } = useToast()
 
@@ -121,7 +121,7 @@ const AdminPanel = () => {
       content: '',
       image: '',
       category: '',
-      readTime: ''
+      read_time: ''
     })
     setIsAdding(false)
     setEditingPost(null)
@@ -135,7 +135,7 @@ const AdminPanel = () => {
       content: post.content,
       image: post.image,
       category: post.category,
-      readTime: post.readTime
+      read_time: post.read_time || post.readTime
     })
     setIsAdding(true)
   }
@@ -184,8 +184,8 @@ const AdminPanel = () => {
                 </Select>
                 <Input
                   placeholder="Read Time (e.g., 5 min read)"
-                  value={formData.readTime}
-                  onChange={(e) => setFormData({...formData, readTime: e.target.value})}
+                  value={formData.read_time}
+                  onChange={(e) => setFormData({...formData, read_time: e.target.value})}
                   required
                 />
               </div>
