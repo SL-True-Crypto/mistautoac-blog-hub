@@ -1,35 +1,6 @@
-import { createClient } from '@supabase/supabase-js'
+import { supabase as integratedClient } from '@/integrations/supabase/client'
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY
-
-// Create a mock client if Supabase is not configured
-const createSupabaseClient = () => {
-  if (!supabaseUrl || !supabaseKey) {
-    // Return a mock client for development when Supabase is not configured
-    const mockQueryBuilder = {
-      select: function() { return this },
-      insert: function() { return this },
-      update: function() { return this },
-      delete: function() { return this },
-      eq: function() { return this },
-      order: function() { return this },
-      single: function() { return { data: null, error: new Error('Supabase not configured') } },
-      gte: function() { return this },
-      then: function(resolve: any) { 
-        resolve({ data: [], error: new Error('Supabase not configured') })
-      }
-    }
-
-    return {
-      from: () => mockQueryBuilder,
-      rpc: () => ({ data: null, error: new Error('Supabase not configured') })
-    }
-  }
-  return createClient(supabaseUrl, supabaseKey)
-}
-
-export const supabase = createSupabaseClient() as any
+export const supabase = integratedClient as any
 
 // Database types
 export interface BlogPost {
