@@ -14,13 +14,121 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      blog_posts: {
+        Row: {
+          category: string
+          content: string
+          created_at: string | null
+          date: string
+          excerpt: string
+          id: number
+          image: string
+          read_time: string
+          title: string
+          updated_at: string | null
+          views: number | null
+        }
+        Insert: {
+          category: string
+          content: string
+          created_at?: string | null
+          date: string
+          excerpt: string
+          id?: number
+          image: string
+          read_time: string
+          title: string
+          updated_at?: string | null
+          views?: number | null
+        }
+        Update: {
+          category?: string
+          content?: string
+          created_at?: string | null
+          date?: string
+          excerpt?: string
+          id?: number
+          image?: string
+          read_time?: string
+          title?: string
+          updated_at?: string | null
+          views?: number | null
+        }
+        Relationships: []
+      }
+      comments: {
+        Row: {
+          content: string
+          created_at: string | null
+          email: string | null
+          id: number
+          name: string
+          post_id: number | null
+        }
+        Insert: {
+          content: string
+          created_at?: string | null
+          email?: string | null
+          id?: number
+          name: string
+          post_id?: number | null
+        }
+        Update: {
+          content?: string
+          created_at?: string | null
+          email?: string | null
+          id?: number
+          name?: string
+          post_id?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "comments_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "blog_posts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      post_views: {
+        Row: {
+          created_at: string | null
+          id: number
+          ip_address: string
+          post_id: number | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: number
+          ip_address: string
+          post_id?: number | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: number
+          ip_address?: string
+          post_id?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "post_views_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "blog_posts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      increment_post_views: {
+        Args: { post_id: number }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never
